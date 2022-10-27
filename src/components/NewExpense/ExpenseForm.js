@@ -27,26 +27,29 @@ const ExpenseForm = (props) => {
         // console.log(e);
         setenteredDate(e.target.value);
     }
-
+    /*********************
+        SUBMIT HANDLER
+    *********************/
     // prevent default from the event (full page refresh)
     const submitHandler = (e) => {
         e.preventDefault();
-
         // creating a new expense based on user input data
         const expenseData = {
             title: enteredTitle,
             amount: enteredAmount,
             date: new Date(enteredDate)
         }
-
         // here we are passing our user collected data back up to onSaveExpenseData
         props.onSaveExpenseData(expenseData);
-
         // 3 lines of code below this comment are to reset the input values to empty after the form gets submitted
         setEnteredTitle('')
         setEnteredAmount('')
         setenteredDate('')
     }
+    /*********************
+        SUBMIT HANDLER
+     *********************/
+
 
     return (
         <form onSubmit={submitHandler}>
