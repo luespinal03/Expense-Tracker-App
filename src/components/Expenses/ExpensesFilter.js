@@ -7,7 +7,7 @@ const ExpensesFilter = (props) => {
     // this function is taking the value from the event (e) and assigning it to selectedYear then passing selectedYear UP towards onFilterChange function 
     const dropDownChangeHandler = (e) => {
         const selectedYear = e.target.value;
-        props.onFilterChange(selectedYear)
+        props.onFilterChange(selectedYear);
     }
 
     return (

@@ -27,6 +27,10 @@ const ExpenseForm = (props) => {
         // console.log(e);
         setenteredDate(e.target.value);
     }
+
+
+
+
     /*********************
         SUBMIT HANDLER
     *********************/
@@ -39,7 +43,7 @@ const ExpenseForm = (props) => {
             amount: enteredAmount,
             date: new Date(enteredDate)
         }
-        // here we are passing our user collected data back up to onSaveExpenseData
+        // here we are passing our user collected data back up to onSaveExpenseData via props (refer to line 23 in NewExpense.js)
         props.onSaveExpenseData(expenseData);
         // 3 lines of code below this comment are to reset the input values to empty after the form gets submitted
         setEnteredTitle('')
@@ -49,6 +53,9 @@ const ExpenseForm = (props) => {
     /*********************
         SUBMIT HANDLER
      *********************/
+
+
+
 
 
     return (
