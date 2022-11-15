@@ -40,7 +40,7 @@ const ExpenseForm = (props) => {
         // creating a new expense based on user input data
         const expenseData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate)
         }
         // here we are passing our user collected data back up to onSaveExpenseData via props (refer to line 23 in NewExpense.js)
