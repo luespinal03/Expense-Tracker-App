@@ -2,12 +2,12 @@ import React from 'react';
 
 import './ExpensesFilter.css';
 
-const ExpensesFilter = (props) => {
+const ExpensesFilter = ({ filterChangeHandler, filteredYear }) => {
 
     // this function is taking the value from the event (e) and assigning it to selectedYear then passing selectedYear UP towards onFilterChange function 
     const dropDownChangeHandler = (e) => {
         const selectedYear = e.target.value;
-        props.onFilterChange(selectedYear);
+        filterChangeHandler(selectedYear);
     }
 
     return (
@@ -16,7 +16,7 @@ const ExpensesFilter = (props) => {
                 <label>Filter by year</label>
                 {/* create a onChange event listener into the <select></select> since the select tag is holding the options which will give us the selected value. onChange, execute {dropDownChangeHandler} */}
                 {/* taking props.selected(holding the value of filteredYear) in as its default value that will change once it gets updated via setFilteredYear in useState */}
-                <select value={props.selected} onChange={dropDownChangeHandler}>
+                <select value={filteredYear} onChange={dropDownChangeHandler}>
                     <option value='2022'>2022</option>
                     <option value='2021'>2021</option>
                     <option value='2020'>2020</option>

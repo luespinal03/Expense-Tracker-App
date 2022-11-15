@@ -1,8 +1,9 @@
-import ExpenseItem from './ExpenseItem';
 import Card from '../UI/Card';
 import './Expenses.css';
 import ExpensesFilter from './ExpensesFilter';
 import { useState } from 'react'
+import ExpensesList from './ExpensesList';
+import ExpensesChart from './ExpensesChart';
 
 const Expenses = (props) => {
     console.log(props)
@@ -19,6 +20,7 @@ const Expenses = (props) => {
         return expense.date.getFullYear().toString() === filteredYear;
     });
 
+
     return (
         <div>
 
@@ -26,18 +28,10 @@ const Expenses = (props) => {
                 {/* passing filterChangeHandler via props down to ExpensesFilter */}
                 {/* passing filteredYear via props down to ExpensesFilter */}
                 <ExpensesFilter
-                    selected={filteredYear} onFilterChange={filterChangeHandler} />
-
-                {/* we are currently passing items in through props. We ar then mapping them so we can reach every single one of them. Then we are setting each expense into the component <ExpenseItem/> as props as well in form of title, amount, and date */}
-                {filteredExpenses.map((expense) => (
-                    <ExpenseItem
-                        // individual id's are better than index as keys
-                        key={expense.id}
-                        title={expense.title}
-                        amount={expense.amount}
-                        date={expense.date}
-                    />
-                ))}
+                    filteredYear={filteredYear}
+                    filterChangeHandler={filterChangeHandler} />
+                <ExpensesChart expenses={filteredExpenses} />
+                <ExpensesList filteredExpenses={filteredExpenses} />
             </Card>
         </div>
     );

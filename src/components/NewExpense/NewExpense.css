@@ -1,5 +1,5 @@
 .new-expense {
-  background-color: #ffe8d6;
+  background-color: #8d99ae;
   padding: 1rem;
   margin: 2rem auto;
   width: 50rem;
@@ -9,22 +9,36 @@
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
 }
 
-.new-expense button {
+/* .new-expense {
   font: inherit;
   cursor: pointer;
   padding: 1rem 2rem;
-  border: 1px solid #2ec4b6;
-  background-color: #2ec4b6;
+  border: 1px solid #058c42;
+  color: white;
+  border-radius: 12px;
+  margin-right: 1rem;
+} */
+
+.add-expense-button {
+  font: inherit;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: 1px solid #058c42;
+  background-color: #058c42;
   color: white;
   border-radius: 12px;
   margin-right: 1rem;
 }
 
-.new-expense button:hover,
+.add-expense-button:hover {
+  background-color: #43aa8b;
+}
+
+/* .new-expense button:hover,
 .new-expense button:active {
   background-color: #84dcc6;
   border-color: #84dcc6;
-}
+} */
 
 .new-expense button.alternative {
   color: #220131;
@@ -32,7 +46,17 @@
   background-color: transparent;
 }
 
-.new-expense button.alternative:hover,
-.new-expense button.alternative:active {
-  background-color: #84dcc6;
+.cancel-button {
+  font: inherit;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: 1px solid #d90429;
+  background-color: #d90429;
+  color: white;
+  border-radius: 12px;
+  margin-right: 1rem;
+}
+
+.cancel-button:hover {
+  background-color: #f93943;
 }
